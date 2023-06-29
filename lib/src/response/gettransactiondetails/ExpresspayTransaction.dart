@@ -18,7 +18,7 @@ class ExpresspayTransaction {
     date = json['date'];
     type = ExpresspayTransactionType.of(json['type'].toString());
     status = ExpresspayTransactionStatus.of(json['status'].toString());
-    amount = json['amount'];
+    amount = double.tryParse('${json['amount']}') != null ? double.parse('${json['amount']}') : 0;
   }
 
   Map<String?, dynamic> toJson() {
