@@ -12,14 +12,13 @@ homepage: https://github.com/ExpresspaySa/expresspay-flutter-sdk
 # v=`grep -m1 '^version: ' pubspec.yaml`  (GREP the first line of starts with version:)
 # echo $v ==> version:  (printing the line from GREP result in variable 'v')
 
-
 # flutter pub publish --force  (Publish Forcefully Avoiding Lint Warning)
 # flutter pub publish  (Publish)
 # dart analyze --verbose  (Analyze for Lint Warnings)
 # dart fix --apply (Fix Lint Warnings)
 
 environment:
-  sdk: '>=2.19.2 <3.0.0'
+  sdk: ">=2.19.2 <3.0.0"
   flutter: ">=2.5.0"
 
 dependencies:
@@ -51,9 +50,9 @@ flutter:
   # adding or updating assets for this project.
   plugin:
     platforms:
-      android:
-        package: com.expresspay.fluttersdk
-        pluginClass: ExpresspaySdkPlugin
+      # android:
+      #   package: com.expresspay.fluttersdk
+      #   pluginClass: ExpresspaySdkPlugin
       ios:
         pluginClass: ExpresspaySdkPlugin
 
