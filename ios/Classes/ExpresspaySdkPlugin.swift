@@ -11,16 +11,13 @@ public class ExpresspaySdkPlugin: NSObject, FlutterPlugin, PKPaymentAuthorizatio
         
     }
     
-    
     public static func register(with registrar: FlutterPluginRegistrar) {
+        let messenger = registrar.messenger()
         
-        if let flutterViewController = UIApplication.shared.delegate?.window??.rootViewController as? FlutterViewController{            
-            events.initiate(with: flutterViewController)
-            methods.initiate(with: flutterViewController)
-        }
+        events.initiate(with: messenger)
+        methods.initiate(with: messenger)
         
         registrar.addMethodCallDelegate(ExpresspaySdkPlugin(), channel: methods.expressPaySdk!)
-        
     }
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {

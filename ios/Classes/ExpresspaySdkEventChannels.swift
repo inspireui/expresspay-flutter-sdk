@@ -25,9 +25,7 @@ public class ExpressPaySDKEventChannels: NSObject{
     var transactionLogs:FlutterEventChannel? = nil;
 
     
-    public func initiate(with flutterViewController: FlutterViewController) {
-        
-        let messenger = flutterViewController.binaryMessenger
+    public func initiate(with messenger: FlutterBinaryMessenger) {
         
         cardpay = FlutterEventChannel(name: "com.expresspay.sdk.cardpay", binaryMessenger: messenger)
         applepay = FlutterEventChannel(name: "com.expresspay.sdk.applepay", binaryMessenger: messenger)
